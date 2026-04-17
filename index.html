@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link rel="icon" type="image/png" href="images/favicon.png">
+<title>Home | Digital Lift</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#fcfaea","surface-dim":"#dcdbcb","surface-container-high":"#ebe9d9","on-error":"#fff","surface-container-lowest":"#fff","error":"#ba1a1a","on-tertiary":"#fff","primary-fixed":"#acf2c9","on-surface-variant":"#404943","inverse-surface":"#313127","surface-container-highest":"#e5e3d3","on-primary-fixed-variant":"#035234","on-error-container":"#93000a","on-primary-container":"#f6fff6","outline":"#707972","on-secondary-container":"#75132d","surface-bright":"#fcfaea","primary":"#246848","on-secondary-fixed":"#400012","primary-container":"#3f8160","on-primary-fixed":"#002112","surface-variant":"#e5e3d3","secondary":"#a4384e","surface-tint":"#266a4b","on-tertiary-fixed-variant":"#055047","error-container":"#ffdad6","surface-container":"#f0eedf","primary-fixed-dim":"#91d5ae","outline-variant":"#bfc9c0","inverse-on-surface":"#f3f1e1","tertiary-container":"#417f75","on-tertiary-container":"#f4fffb","surface":"#fcfaea","on-primary":"#fff","tertiary":"#26665c","inverse-primary":"#91d5ae","on-surface":"#1c1c13","on-secondary":"#fff","tertiary-fixed-dim":"#94d2c6","secondary-container":"#fe7e93","on-background":"#1c1c13","tertiary-fixed":"#afefe2","secondary-fixed":"#ffd9dd","surface-container-low":"#f6f4e4","on-tertiary-fixed":"#00201c","on-secondary-fixed-variant":"#842038","secondary-fixed-dim":"#ffb2bb"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},fontFamily:{"headline":["Newsreader","serif"],"body":["Plus Jakarta Sans","sans-serif"],"label":["Plus Jakarta Sans","sans-serif"]}}}}</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:#fcfaea;color:#1c1c13}
+  .headline-font{font-family:'Newsreader',serif}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .marquee-track{animation:marquee 25s linear infinite;display:flex;width:max-content}
+  .marquee-track:hover{animation-play-state:paused}
+  .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#313127;color:#f3f1e1;padding:1.25rem 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(0);transition:transform .4s ease}
+  .cookie-banner.hidden{transform:translateY(100%);pointer-events:none}
+  .mobile-menu{display:none}.mobile-menu.open{display:flex}
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<div class="cookie-banner" id="cookieBanner"><p class="text-sm flex-1 min-w-[200px]">We use cookies to enhance your browsing experience. By clicking "Accept", you consent to our use of cookies.</p><div class="flex gap-3"><button onclick="acceptCookies()" class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold hover:bg-primary-container transition-all">Accept</button><button onclick="declineCookies()" class="border border-stone-600 text-stone-300 px-6 py-2 rounded-full text-sm font-bold hover:bg-stone-800 transition-all">Decline</button></div></div>
+
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+  <a href="index.html" class="text-2xl md:text-3xl font-black tracking-tighter text-stone-900">Digital Lift</a>
+  <div class="hidden md:flex items-center gap-10">
+    <a class="text-emerald-800 font-bold border-b border-emerald-800/20 text-xs uppercase tracking-widest" href="index.html">Home</a>
+    <a class="text-stone-600 hover:text-stone-900 transition-colors text-xs uppercase tracking-widest font-bold" href="testimonials.html">Testimonials</a>
+    <a class="text-stone-600 hover:text-stone-900 transition-colors text-xs uppercase tracking-widest font-bold" href="pricing.html">Pricing</a>
+    <a class="text-stone-600 hover:text-stone-900 transition-colors text-xs uppercase tracking-widest font-bold" href="contact.html">Contact</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="order.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-primary-container transition-all active:scale-95">Order Now</a>
+    <button class="md:hidden text-stone-900" onclick="document.getElementById('mobileMenu').classList.toggle('open')"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+</div>
+<div id="mobileMenu" class="mobile-menu flex-col bg-stone-50 px-8 pb-6 gap-4 md:hidden">
+  <a class="text-stone-700 font-bold text-sm uppercase tracking-widest py-2" href="index.html">Home</a>
+  <a class="text-stone-700 font-bold text-sm uppercase tracking-widest py-2" href="testimonials.html">Testimonials</a>
+  <a class="text-stone-700 font-bold text-sm uppercase tracking-widest py-2" href="pricing.html">Pricing</a>
+  <a class="text-stone-700 font-bold text-sm uppercase tracking-widest py-2" href="contact.html">Contact</a>
+  <a class="text-stone-700 font-bold text-sm uppercase tracking-widest py-2" href="order.html">Order Now</a>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="relative min-h-screen flex items-center pt-24 pb-20 bg-stone-900 overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none"><img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdEUKUzDQC9AkmXz9YApSLtDZb3E2cxyW3yAWw8j_JvylUoJe3pJgBntSnTtHKORLhFpehyz1ql4xxCkTbxQKqlShM5cMUzs-LoG6wVZn2TqGtXefZog4EKpumv-_kyk7qksdWO0V7qSkrTsJ0UBm-02ncCfGMJX7QZ53vuZM_HxNx8PHA6yZWIWcfyKw--8JX398rROFHOc1V6dxs7966meG4lZWpqO3UZB6SqVkHCbTuMzkkYaQG9IN9hj6VBYAC44w21kpTH0-P"/></div>
+<div class="relative w-full max-w-7xl mx-auto px-8 text-center">
+  <label class="block text-emerald-400 uppercase tracking-[0.3em] font-bold text-xs mb-6">Website Development & Digital Marketing</label>
+  <h1 class="text-stone-50 headline-font text-6xl md:text-8xl leading-tight mb-8">Beautiful websites <span class="italic font-light">that grow</span> <span class="font-bold text-emerald-400">your business.</span></h1>
+  <p class="text-stone-400 text-xl max-w-2xl leading-relaxed mb-10 font-body mx-auto">We build stunning, professional websites for small businesses — plus digital marketing to help you get found online and win more customers.</p>
+  <div class="flex flex-wrap gap-4 justify-center">
+    <a href="order.html" class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-base hover:bg-primary-container transition-all inline-block">Start Your Project</a>
+  </div>
+</div>
+</section>
+
+<!-- Trust Marquee -->
+<section class="bg-surface-container-low py-12 overflow-hidden">
+<div class="marquee-track">
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">STARTER STUDIOS</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">BLOOM & CO</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">FRESH BITES KITCHEN</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">URBAN THREADS</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">BRIGHT PATH CONSULTING</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">WILLOW & SAGE</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">APEX PROPERTY GROUP</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">STARTER STUDIOS</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">BLOOM & CO</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">FRESH BITES KITCHEN</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">URBAN THREADS</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">BRIGHT PATH CONSULTING</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">WILLOW & SAGE</span>
+  <span class="text-2xl headline-font font-bold opacity-40 mx-12">APEX PROPERTY GROUP</span>
+</div>
+</section>
+
+<!-- Services -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+  <div class="mb-20 max-w-2xl">
+    <label class="text-primary font-bold uppercase tracking-widest text-xs">Our Services</label>
+    <h2 class="text-5xl headline-font mt-4 leading-tight">Mastering the intersection of technology and art.</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Website Development -->
+    <div class="bg-surface-container-highest rounded-xl p-12 flex flex-col justify-between">
+      <div>
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-8"><span class="material-symbols-outlined">web</span></div>
+        <h3 class="text-3xl headline-font mb-4">Website Development</h3>
+        <p class="text-on-surface-variant text-lg leading-relaxed">High-performance websites tailored for small businesses. Built for speed, SEO, and visual impact. From restaurants to real estate — we build sites that convert.</p>
+      </div>
+      <div class="mt-8"><img alt="Website development mockup" class="rounded-lg w-full" src="images/web-dev.png"/></div>
+      <a class="mt-8 flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all" href="pricing.html">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+    <!-- Digital Marketing -->
+    <div class="bg-surface-container-low rounded-xl p-12 flex flex-col justify-between">
+      <div>
+        <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-8"><span class="material-symbols-outlined">campaign</span></div>
+        <h3 class="text-3xl headline-font mb-4">Digital Marketing</h3>
+        <p class="text-on-surface-variant text-lg leading-relaxed">Grow your brand on social media with targeted ads, content strategies, and campaigns that actually bring in customers.</p>
+      </div>
+      <div class="mt-8"><img alt="Social media marketing" class="w-full rounded-xl object-cover shadow-sm" src="images/digital-marketing.png"/></div>
+      <a class="mt-8 flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all" href="pricing.html">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-32 bg-stone-900 text-stone-50 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+  <div class="relative">
+    <div class="aspect-square bg-stone-800 rounded-xl overflow-hidden"><img alt="Team" class="w-full h-full object-cover grayscale mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ZNySmxAf5chwtP7saulEjq95isTP-1vWZ5uNzhzYy4ZUAiJGEW4j2PQHZT4bIh-qiqPdj7Bz205QT3aEtQiphf37YsCEoezobduqmtbpsn_8FB4ZvdYWgsAKR2YikM8v_7IlJVa_uqW24hWG-Yd3MntkWdg0G2bg-UJWvYO5a2uBLRTiQzTKxRgTkXJOumzToiRb2kqTeR337B0eHDCDTiyYf7jwWh2iEdhba7re1FUd8TaHjwQetvS1iGiqdNbPTx1STy59Ebsx"/></div>
+    <div class="absolute -bottom-8 -right-8 bg-primary p-10 rounded-xl hidden md:block"><p class="text-4xl headline-font font-bold">5+</p><p class="text-sm uppercase tracking-widest opacity-80">Years Experience</p></div>
+  </div>
+  <div>
+    <label class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Why Choose Us</label>
+    <h2 class="text-5xl headline-font mt-4 mb-10 leading-tight">Elevating brands from standard to significant.</h2>
+    <div class="space-y-12">
+      <div class="flex gap-6"><span class="text-emerald-400 font-headline italic text-4xl">01.</span><div><h4 class="text-xl font-bold mb-2">Strategy First</h4><p class="text-stone-400 leading-relaxed">We don't just build websites; we design business tools that convert prospects into loyal clients.</p></div></div>
+      <div class="flex gap-6"><span class="text-emerald-400 font-headline italic text-4xl">02.</span><div><h4 class="text-xl font-bold mb-2">Exquisite Aesthetics</h4><p class="text-stone-400 leading-relaxed">Every pixel feels intentional and premium — your brand deserves nothing less.</p></div></div>
+      <div class="flex gap-6"><span class="text-emerald-400 font-headline italic text-4xl">03.</span><div><h4 class="text-xl font-bold mb-2">Bespoke Support</h4><p class="text-stone-400 leading-relaxed">You work directly with us. No middle-management, just expert-level execution.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Testimonials Preview -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 text-center mb-20"><h2 class="text-5xl headline-font">Voices of Excellence</h2></div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="bg-surface/50 backdrop-blur-md p-10 rounded-xl border border-white/20">
+    <div class="flex text-primary mb-6"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span></div>
+    <p class="text-lg italic font-body text-on-surface-variant mb-8 leading-relaxed">"Digital Lift transformed our online presence. Our conversion rates increased by 40% in just three months."</p>
+    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">JR</div><div class="text-left"><p class="font-bold">Julian Rhodes</p><p class="text-xs uppercase tracking-tighter text-on-surface-variant">CEO, Rhodes Real Estate</p></div></div>
+  </div>
+  <div class="bg-primary text-on-primary p-10 rounded-xl transform md:-translate-y-8 shadow-2xl">
+    <div class="flex text-emerald-300 mb-6"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span></div>
+    <p class="text-lg italic font-body mb-8 leading-relaxed">"The strategic depth Digital Lift brings is unmatched. They understood our heritage and modernised it without losing our soul."</p>
+    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-bold text-lg">ER</div><div class="text-left"><p class="font-bold">Elena Rossi</p><p class="text-xs uppercase tracking-tighter opacity-80">Director, Rossi Watches</p></div></div>
+  </div>
+  <div class="bg-surface/50 backdrop-blur-md p-10 rounded-xl border border-white/20">
+    <div class="flex text-primary mb-6"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span></div>
+    <p class="text-lg italic font-body text-on-surface-variant mb-8 leading-relaxed">"Working with them felt like an extension of our own internal design team. Truly collaborative and result-oriented."</p>
+    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary font-bold text-lg">MT</div><div class="text-left"><p class="font-bold">Marcus Thorne</p><p class="text-xs uppercase tracking-tighter text-on-surface-variant">Founder, Thorne &amp; Co</p></div></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-8">
+<div class="max-w-7xl mx-auto rounded-3xl overflow-hidden relative" style="background-color:#146940;">
+  <div class="absolute inset-0 opacity-10 mix-blend-overlay"><img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgB9VgS98w2O7NuzxAf4eehDnEdKrq5pAxTKSeTvE1Frn7GmEY06rd6RW1__qDMf96UMP7W_Y7CYdi1vVGNvU3NyaX6XXKxdZ_XX6798ZmO6LbllzyiPlqDTbe0WQ4QYWxqBMOn2NPSusrP8kuTrQBASel9n91uj8S5VbuzafUQio8kQ5jWckj3aSM5DsXeNQO6pq0DqfBT5jnyeuaY-Ia6DHWk2ZifkpYQfqFf8atOjROp6eoiBjWY2geirNqpPUMAXAAok4Hik2r"/></div>
+  <div class="relative px-12 py-20 text-center text-on-secondary">
+    <h2 class="text-5xl md:text-7xl headline-font mb-8">Ready to start your ascent?</h2>
+    <p class="text-xl max-w-2xl mx-auto mb-12 opacity-90">Join the ranks of brands that have redefined their digital legacy with Digital Lift.</p>
+    <a href="contact.html" class="bg-on-secondary px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-block" style="color:#146940;">Request a Consultation</a>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-stone-900 text-stone-400">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div><a href="index.html" class="text-2xl md:text-3xl font-black text-stone-50 mb-6 block">Digital Lift</a><p class="text-sm leading-relaxed">Crafting digital legacies for ambitious brands. From Southend-on-Sea to the world.</p></div>
+<div><h4 class="text-stone-50 font-bold uppercase tracking-widest text-xs mb-8">Services</h4><ul class="space-y-4"><li><a class="hover:text-stone-100 transition-colors" href="pricing.html">Pricing</a></li><li><a class="hover:text-stone-100 transition-colors" href="order.html">Order Now</a></li></ul></div>
+<div><h4 class="text-stone-50 font-bold uppercase tracking-widest text-xs mb-8">Company</h4><ul class="space-y-4"><li><a class="hover:text-stone-100 transition-colors" href="contact.html">Contact Us</a></li><li><a class="hover:text-stone-100 transition-colors" href="testimonials.html">Testimonials</a></li></ul></div>
+<div><h4 class="text-stone-50 font-bold uppercase tracking-widest text-xs mb-8">Subscribe</h4><p class="text-xs mb-4">Monthly insights for small business branding.</p><form action="https://api.web3forms.com/submit" method="POST" class="flex gap-2"><input type="hidden" name="access_key" value="dbd6aa53-b944-4f5f-a1bc-2b2b0a548262"><input type="hidden" name="subject" value="New Newsletter Subscriber"><input class="bg-stone-800 border-none rounded-lg text-sm w-full focus:ring-1 focus:ring-emerald-400 px-4 py-2" placeholder="Email" type="email" name="email" required/><button type="submit" class="bg-emerald-400 text-stone-900 px-4 rounded-lg font-bold"><span class="material-symbols-outlined">chevron_right</span></button></form></div>
+</div>
+<div class="border-t border-stone-800 py-8 px-12 text-center text-xs opacity-60">© 2026 Digital Lift. All rights reserved. Crafted in the UK.</div>
+</footer>
+<script>function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookieBanner').classList.add('hidden')}function declineCookies(){localStorage.setItem('cookieConsent','declined');document.getElementById('cookieBanner').classList.add('hidden')}(function(){if(localStorage.getItem('cookieConsent'))document.getElementById('cookieBanner').classList.add('hidden')})();</script>
+</body></html>
